@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hobbre</title>
+  <meta name="description" content="Hobbre is het deelplatform voor hobby's. Leen spullen van je buren, deel je kennis en vind mensen om mee te klimmen, jammen of sterren te kijken. Meld je aan voor de wachtlijst.">
+  <meta name="theme-color" content="#FFE4D4">
+  <meta property="og:title" content="Hobbre: jouw straat heeft een kajak">
+  <meta property="og:description" content="En een naaimachine, een telescoop, een gitaarleraar en een klimmaatje. Hobbre helpt je ze te vinden. We lanceren eerst in Utrecht.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css?v=20260927e">
+  <link rel="stylesheet" href="footers.css?v=20260927e">
+  <link rel="stylesheet" href="heroes.css?v=20260927e">
+  <link rel="stylesheet" href="categories.css?v=20260927e">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Naar de inhoud</a>
+
+<!-- Aankondiging -->
+<div class="ticker" role="marquee" aria-label="Wachtlijst nu open. We starten in Utrecht.">
+  <div class="ticker__track" aria-hidden="true">
+    <div class="ticker__group">
+      <span>Wachtlijst nu open</span><i>✦</i>
+      <span>We starten in Utrecht</span><i>✦</i>
+      <span>Ruil schermtijd in voor mensentijd</span><i>✦</i>
+      <span>Lenen in plaats van kopen</span><i>✦</i>
+      <span>Gratis aanmelden</span><i>✦</i>
+    </div>
+    <div class="ticker__group">
+      <span>Wachtlijst nu open</span><i>✦</i>
+      <span>We starten in Utrecht</span><i>✦</i>
+      <span>Ruil schermtijd in voor mensentijd</span><i>✦</i>
+      <span>Lenen in plaats van kopen</span><i>✦</i>
+      <span>Gratis aanmelden</span><i>✦</i>
+    </div>
+  </div>
+</div>
+
+<!-- Navigatie -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="Hobbre, naar boven">
+    <img src="assets/img/hobbre-logo.webp" alt="Hobbre" width="2000" height="519">
+  </a>
+  <nav class="nav__links" aria-label="Hoofdmenu">
+    <a class="pill" href="#wat-is-hobbre">Wat is Hobbre</a>
+    <a class="pill" href="#hobbys">Hobby's</a>
+    <a class="pill" href="#hoe-het-werkt">Hoe het werkt</a>
+    <a class="pill" href="bedrijven.html">Voor bedrijven</a>
+    <a class="pill" href="#vragen">Vragen</a>
+  </nav>
+  <div class="nav__actions">
+    <a class="btn btn--solid" href="#aanmelden">Meld je aan</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu openen">
+      <span aria-hidden="true">+</span>
+    </button>
+  </div>
+  <nav class="nav__drawer" id="mobile-menu" aria-label="Mobiel menu" hidden>
+    <a class="pill" href="#wat-is-hobbre">Wat is Hobbre</a>
+    <a class="pill" href="#hobbys">Hobby's</a>
+    <a class="pill" href="#hoe-het-werkt">Hoe het werkt</a>
+    <a class="pill" href="bedrijven.html">Voor bedrijven</a>
+    <a class="pill" href="#vragen">Vragen</a>
+    <a class="btn btn--solid" href="#aanmelden">Meld je aan</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO (variant 7: buurtfeed + straat, kaartjes vliegen naar huis).
+       Andere varianten: hero-varianten.html, of index.html?hero=1 t/m 6 -->
+  <section class="hero hv4 hv7" id="top" data-hero="7">
+    <div class="scene hv7__scene" data-scene="home">
+      <div class="scene__sticky">
+        <img class="scene__cloud scene__cloud--a" src="assets/img/ribbon-knot.webp" alt="" width="2000" height="1086">
+        <img class="scene__cloud scene__cloud--b" src="assets/img/ribbon-hero.webp" alt="" width="2400" height="1122">
+        <p class="scene__caption display">Allemaal in jouw straat.</p>
+        <span class="scene__cue" aria-hidden="true">Scroll naar jouw straat <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+        <div class="hv7__layer">
+          <div class="hv4__grid">
+            <div class="hv4__copy hv7__copy">
+              <span class="eyebrow">Wachtlijst open</span>
+              <h1 class="display hv-title">
+                <span>Jouw straat</span>
+                <span>heeft een</span>
+                <span>kajak.</span>
+              </h1>
+              <p class="hero__lede">En een naaimachine, een telescoop, een gitaarleraar en een klimmaatje. Hobbre helpt je ze te vinden. We lanceren eerst in Utrecht.</p>
+              <form class="quick-signup" data-signup="quick" novalidate>
+                <label class="sr-only" for="hero7-email">E-mailadres</label>
+                <input class="field field--pill" id="hero7-email" name="email" type="email" autocomplete="email" placeholder="jij@voorbeeld.nl" required>
+                <button class="btn btn--solid btn--lg" type="submit">Meld je aan</button>
+                <p class="quick-signup__msg" role="status" aria-live="polite"></p>
+              </form>
+              <p class="hero__note"><span class="dot dot--mint" aria-hidden="true"></span>Gratis <span aria-hidden="true">·</span> Geen spam <span aria-hidden="true">·</span> Afmelden kan altijd</p>
+            </div>
+            <div class="hv4__feed" role="img" aria-label="Voorbeeld van de app: een kajak, naaimachine en telescoop te leen, een gitaarleraar en een klimmaatje, allemaal binnen 800 meter">
+              <img class="hv4__ribbon" src="assets/img/ribbon-hero.webp" alt="" width="2400" height="1122" data-depth="-0.04">
+              <div class="hv4__head">
+                <span class="eyebrow">In jouw straat</span>
+                <p>Vandaag in de buurt</p>
+              </div>
+              <article class="lcard" style="--bg:var(--sky);--r:-2deg">
+                <div class="lcard__media"><img src="assets/img/cut/kayak.webp" alt="" width="956" height="750"></div>
+                <div class="lcard__body"><h3>Kajak</h3><div class="lcard__meta"><span class="lcard__type">Te leen</span><span>150 m</span></div></div>
+              </article>
+              <article class="lcard lcard--mid" style="--bg:var(--mint);--r:1.5deg">
+                <div class="lcard__media"><img src="assets/img/cut/sewing.webp" alt="" width="653" height="682"></div>
+                <div class="lcard__body"><h3>Naaimachine</h3><div class="lcard__meta"><span class="lcard__type">Te leen</span><span>300 m</span></div></div>
+              </article>
+              <article class="lcard" style="--bg:var(--lavender);--r:2deg">
+                <div class="lcard__media"><img src="assets/img/cut/telescope.webp" alt="" width="608" height="682"></div>
+                <div class="lcard__body"><h3>Telescoop</h3><div class="lcard__meta"><span class="lcard__type">Te leen</span><span>450 m</span></div></div>
+              </article>
+              <article class="lcard" style="--bg:var(--sun);--r:1deg">
+                <div class="lcard__media"><img src="assets/img/cut/guitar.webp" alt="" width="653" height="681"></div>
+                <div class="lcard__body"><h3>Gitaarleraar</h3><div class="lcard__meta"><span class="lcard__type">Les</span><span>600 m</span></div></div>
+              </article>
+              <article class="lcard lcard--mid" style="--bg:var(--peach);--r:-1.5deg">
+                <div class="lcard__media"><img src="assets/img/cut/carabiner.webp" alt="" width="603" height="682"></div>
+                <div class="lcard__body"><h3>Klimmaatje</h3><div class="lcard__meta"><span class="lcard__type">Maatje</span><span>800 m</span></div></div>
+              </article>
+              <article class="lcard lcard--more" style="--r:-2deg">
+                <strong>En nog veel meer</strong>
+                <img src="assets/img/cut/pin.webp" alt="" width="524" height="681">
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="scene__ground">
+          <div class="street" role="img" aria-label="Een straat met zes opblaasbare grachtenpandjes: bij het eerste staat een kajak, achter het raam van het tweede een naaimachine, op het balkon van het derde een telescoop, bij het vierde een gitaar, bij het vijfde klimtouw en voor het zesde een fiets.">
+            <figure class="house" style="--hw:14.93%"><img src="assets/img/houses/house-1.webp" alt="" width="388" height="837"></figure>
+            <figure class="house" style="--hw:14.2%"><img src="assets/img/houses/house-2.webp" alt="" width="369" height="836"></figure>
+            <figure class="house" style="--hw:13.27%"><img src="assets/img/houses/house-3.webp" alt="" width="345" height="857"></figure>
+            <figure class="house" style="--hw:14.7%"><img src="assets/img/houses/house-4.webp" alt="" width="382" height="833"></figure>
+            <figure class="house" style="--hw:13.47%"><img src="assets/img/houses/house-5.webp" alt="" width="350" height="837"></figure>
+            <figure class="house" style="--hw:15.43%"><img src="assets/img/houses/house-6.webp" alt="" width="401" height="851"></figure>
+          </div>
+          <div class="scene__pavement" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOBBY-STRIP -->
+  <section class="reel" aria-label="Hobby's die je via Hobbre kunt proberen">
+    <div class="reel__track" aria-hidden="true">
+      <div class="reel__group">
+        <span class="reel__word">Kajakken</span><img src="assets/img/cut/kayak.webp" alt="" width="956" height="750">
+        <span class="reel__word">Kamperen</span><img src="assets/img/cut/tent.webp" alt="" width="681" height="560">
+        <span class="reel__word">Gitaar</span><img src="assets/img/cut/guitar.webp" alt="" width="653" height="681">
+        <span class="reel__word">Naaien</span><img src="assets/img/cut/sewing.webp" alt="" width="653" height="682">
+        <span class="reel__word">Analoge fotografie</span><img src="assets/img/cut/camera.webp" alt="" width="682" height="560">
+        <span class="reel__word">Sterrenkijken</span><img src="assets/img/cut/telescope.webp" alt="" width="608" height="682">
+        <span class="reel__word">Schilderen</span><img src="assets/img/cut/palette.webp" alt="" width="682" height="646">
+        <span class="reel__word">Klimmen</span><img src="assets/img/cut/carabiner.webp" alt="" width="603" height="682">
+        <span class="reel__word">Padel</span><img src="assets/img/cut/racket.webp" alt="" width="577" height="682">
+        <span class="reel__word">Breien</span><img src="assets/img/cut/yarn.webp" alt="" width="586" height="682">
+        <span class="reel__word">Skateboarden</span><img src="assets/img/cut/skateboard.webp" alt="" width="682" height="548">
+        <span class="reel__word">Tuinieren</span><img src="assets/img/cut/plant.webp" alt="" width="581" height="682">
+        <span class="reel__word">Klussen</span><img src="assets/img/cut/drill.webp" alt="" width="596" height="682">
+      </div>
+      <div class="reel__group">
+        <span class="reel__word">Kajakken</span><img src="assets/img/cut/kayak.webp" alt="" width="956" height="750">
+        <span class="reel__word">Kamperen</span><img src="assets/img/cut/tent.webp" alt="" width="681" height="560">
+        <span class="reel__word">Gitaar</span><img src="assets/img/cut/guitar.webp" alt="" width="653" height="681">
+        <span class="reel__word">Naaien</span><img src="assets/img/cut/sewing.webp" alt="" width="653" height="682">
+        <span class="reel__word">Analoge fotografie</span><img src="assets/img/cut/camera.webp" alt="" width="682" height="560">
+        <span class="reel__word">Sterrenkijken</span><img src="assets/img/cut/telescope.webp" alt="" width="608" height="682">
+        <span class="reel__word">Schilderen</span><img src="assets/img/cut/palette.webp" alt="" width="682" height="646">
+        <span class="reel__word">Klimmen</span><img src="assets/img/cut/carabiner.webp" alt="" width="603" height="682">
+        <span class="reel__word">Padel</span><img src="assets/img/cut/racket.webp" alt="" width="577" height="682">
+        <span class="reel__word">Breien</span><img src="assets/img/cut/yarn.webp" alt="" width="586" height="682">
+        <span class="reel__word">Skateboarden</span><img src="assets/img/cut/skateboard.webp" alt="" width="682" height="548">
+        <span class="reel__word">Tuinieren</span><img src="assets/img/cut/plant.webp" alt="" width="581" height="682">
+        <span class="reel__word">Klussen</span><img src="assets/img/cut/drill.webp" alt="" width="596" height="682">
+      </div>
+    </div>
+    <p class="sr-only">Kajakken, kamperen, gitaar, naaien, analoge fotografie, sterrenkijken, schilderen, klimmen, padel, breien, skateboarden, tuinieren, klussen en nog veel meer.</p>
+  </section>
+
+  <!-- WAT IS HOBBRE -->
+  <section class="band band--white what" id="wat-is-hobbre">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Wat is Hobbre?</span>
+        <h2 class="display display--lg">Eén plek voor elke hobby.</h2>
+        <p class="lede">Hobbre is een deelplatform rond hobby's. Geen dure spullen meer kopen voor iets wat je misschien niet eens leuk vindt, geen vijf verschillende apps, en je hoeft het niet alleen te doen. Alles wat je nodig hebt, vind je om de hoek.</p>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar pillar--lavender">
+          <img class="pillar__sticker" src="assets/img/cut/magnifier.webp" alt="" width="635" height="682" loading="lazy">
+          <span class="tag">Ontdekken</span>
+          <h3>Vind een hobby die bij je past</h3>
+          <p>Ontdek hobby's waar je nog nooit aan dacht, zie wat je nodig hebt om te beginnen en waar je het in de buurt kunt proberen.</p>
+          <ul class="chips" aria-label="Voorbeelden"><li>Pottenbakken</li><li>Vogels kijken</li><li>Boulderen</li></ul>
+        </article>
+        <article class="pillar pillar--mint">
+          <img class="pillar__sticker" src="assets/img/cut/tent.webp" alt="" width="681" height="560" loading="lazy">
+          <span class="tag">Lenen &amp; verhuren</span>
+          <h3>Lenen in plaats van kopen</h3>
+          <p>Leen spullen van mensen in de buurt in plaats van nieuw te kopen. Ligt er een tent te verstoffen? Verhuur hem en verdien een zakcentje.</p>
+          <ul class="chips" aria-label="Voorbeelden"><li>Tenten</li><li>Camera's</li><li>Gereedschap</li></ul>
+        </article>
+        <article class="pillar pillar--sun">
+          <img class="pillar__sticker" src="assets/img/cut/roller.webp" alt="" width="520" height="682" loading="lazy">
+          <span class="tag">Kennis delen</span>
+          <h3>Leer het, of leer het een ander</h3>
+          <p>Bied aan waar je goed in bent, of vind iemand die goed is in wat jij niet kunt. Gitaarles, behangen, een feestje voorbereiden.</p>
+          <ul class="chips" aria-label="Voorbeelden"><li>Lessen</li><li>Klushulp</li><li>Workshops</li></ul>
+        </article>
+        <article class="pillar pillar--blue">
+          <img class="pillar__sticker" src="assets/img/cut/buddies.webp" alt="" width="682" height="547" loading="lazy">
+          <span class="tag">Hobbymaatjes</span>
+          <h3>Nooit meer in je eentje</h3>
+          <p>Ontmoet mensen in de buurt met dezelfde interesse. Iemand om mee te klimmen, te jammen of eindelijk eens te padellen.</p>
+          <ul class="chips" aria-label="Voorbeelden"><li>Klimmen</li><li>Jamsessies</li><li>Hardloopclub</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOBBY-CATEGORIEËN (variant 3: scrollrij). Andere varianten: categorie-varianten.html, of index.html?cats=1 of 2 -->
+  <section class="cats cats--rail" id="hobbys" data-cats="3" aria-labelledby="cats-title-3">
+    <div class="rail" data-rail>
+      <div class="rail__sticky">
+        <div class="wrap">
+      <div class="cats__head">
+        <div class="cats__titles">
+          <span class="eyebrow">Hobby's ontdekken</span>
+          <h2 class="display display--lg" id="cats-title-3">Wat wil je vandaag uitproberen?</h2>
+        </div>
+        <p class="cats__sub">51 hobby's in 8 categorieën om mee te beginnen.</p>
+      </div>
+        </div>
+        <div class="rail__viewport">
+          <div class="rail__track">
+          <article class="railcard railcard--lavender" style="--tilt:-2deg">
+            <img class="railcard__sticker" src="assets/img/cut/palette.webp" alt="" width="682" height="646" loading="lazy">
+            <span class="railcard__count"><strong>8</strong> hobby's</span>
+            <h3 class="display">Creatief &amp; Makers</h3>
+            <ul class="chips" aria-label="Voorbeelden"><li>Fotografie</li><li>Tekenen</li><li>3D-printen</li></ul>
+          </article>
+          <article class="railcard railcard--orange" style="--tilt:1.5deg">
+            <img class="railcard__sticker" src="assets/img/cut/bicycle.webp" alt="" width="682" height="647" loading="lazy">
+            <span class="railcard__count"><strong>10</strong> hobby's</span>
+            <h3 class="display">Sport &amp; Beweging</h3>
+            <ul class="chips" aria-label="Voorbeelden"><li>Fietsen</li><li>Watersport</li><li>Fitness</li></ul>
+          </article>
+          <article class="railcard railcard--sky" style="--tilt:-1deg">
+            <img class="railcard__sticker" src="assets/img/cut/books.webp" alt="" width="605" height="682" loading="lazy">
+            <span class="railcard__count"><strong>6</strong> hobby's</span>
+            <h3 class="display">Leren &amp; Ontwikkeling</h3>
+            <ul class="chips" aria-label="Voorbeelden"><li>Programmeren</li><li>STEM</li><li>Taalkunde</li></ul>
+          </article>
+          <article class="railcard railcard--mint" style="--tilt:2deg">
+            <img class="railcard__sticker" src="assets/img/cut/tent.webp" alt="" width="681" height="560" loading="lazy">
+            <span class="railcard__count"><strong>7</strong> hobby's</span>
+            <h3 class="display">Buiten &amp; Avontuur</h3>
+            <ul class="chips" aria-label="Voorbeelden"><li>Kamperen</li><li>Klimmen</li><li>Vogelspotten</li></ul>
+          </article>
+          <article class="railcard railcard--sun" style="--tilt:-1.5deg">
+            <img class="railcard__sticker" src="assets/img/cut/masks.webp" alt="" width="682" height="622" loading="lazy">
+            <span class="railcard__count"><strong>5</strong> hobby's</span>
+            <h3 class="display">Film, Theater &amp; Podium</h3>
+            <ul class="chips" aria-label="Voorbeelden"><li>Film &amp; video</li><li>Theatermaken</li><li>Cosplay</li></ul>
+          </article>
+          <article class="railcard railcard--blue" style="--tilt:1deg">
+            <img class="railcard__sticker" src="assets/img/cut/dice.webp" alt="" width="682" height="635" loading="lazy">
+            <span class="railcard__count"><strong>5</strong> hobby's</span>
+            <h3 class="display">Games &amp; Entertainment</h3>
+            <ul class="chips" aria-label="Voorbeelden"><li>Bordspellen</li><li>VR &amp; gaming</li><li>Escape rooms</li></ul>
+          </article>
+          <article class="railcard railcard--pink" style="--tilt:-2deg">
+            <img class="railcard__sticker" src="assets/img/cut/buddies.webp" alt="" width="682" height="547" loading="lazy">
+            <span class="railcard__count"><strong>4</strong> hobby's</span>
+            <h3 class="display">Sociaal &amp; Community</h3>
+            <ul class="chips" aria-label="Voorbeelden"><li>Vrijwilligerswerk</li><li>Buurtprojecten</li><li>Events</li></ul>
+          </article>
+          <article class="railcard railcard--violet" style="--tilt:1.5deg">
+            <img class="railcard__sticker" src="assets/img/cut/guitar.webp" alt="" width="653" height="681" loading="lazy">
+            <span class="railcard__count"><strong>6</strong> hobby's</span>
+            <h3 class="display">Muziek &amp; Dans</h3>
+            <ul class="chips" aria-label="Voorbeelden"><li>Gitaar</li><li>Drums</li><li>DJ-apparatuur</li></ul>
+          </article>
+          <article class="railcard railcard--suggest" style="--tilt:-1deg">
+            <img class="railcard__plus" src="assets/img/cut/pin.webp" alt="" width="524" height="681" loading="lazy">
+            <h3 class="display">Jouw hobby hier?</h3>
+            <p>Welke hobby wil jij op Hobbre kunnen vinden? Stel hem voor en bepaal mee welke hobby's we als eerste toevoegen.</p>
+            <form class="suggest" data-suggest novalidate>
+              <label class="sr-only" for="suggest-hobby">Welke hobby wil je voorstellen?</label>
+              <input class="field field--pill" id="suggest-hobby" name="hobby" type="text" maxlength="60" autocomplete="off" placeholder="Bijvoorbeeld imkeren" required>
+              <button class="btn btn--solid" type="submit">Stel voor</button>
+              <p class="suggest__msg" role="status" aria-live="polite"></p>
+              <button class="suggest__again" type="button" data-suggest-again hidden>Nog een hobby voorstellen</button>
+            </form>
+          </article>
+          </div>
+        </div>
+        <div class="wrap rail__foot">
+          <div class="rail__progress" aria-hidden="true"><span></span></div>
+          <p class="rail__hint"><span class="rail__hint-scroll">Scroll om door de categorieën te gaan</span><span class="rail__hint-swipe">Swipe voor meer →</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENSENTIJD -->
+  <section class="band band--orange people" aria-labelledby="people-title">
+    <div class="wrap people__grid">
+      <div class="people__copy">
+        <h2 class="display display--xl" id="people-title">
+          <span class="strike">Schermtijd</span>
+          <span>Mensentijd.</span>
+        </h2>
+        <p class="lede">De gemiddelde Nederlander heeft zo'n 46 uur vrije tijd per week. Veel daarvan verdwijnt in een scherm. Met Hobbre besteed je meer van die tijd aan maken, spelen en leren, samen met de mensen om je heen.</p>
+        <div class="note-card">
+          <img src="assets/img/cut/plant.webp" alt="" width="581" height="682" loading="lazy">
+          <p><strong>Goed voor je portemonnee en de planeet.</strong> Elke tent die wordt geleend, is een tent minder die voor één weekend wordt gekocht en daarna in de schuur verdwijnt.</p>
+        </div>
+      </div>
+
+      <div class="people__visual">
+        <div class="stat-sticker" aria-label="46 uur vrije tijd per week">
+          <span class="stat-sticker__num">46</span>
+          <span class="stat-sticker__unit">uur vrije tijd per week*</span>
+        </div>
+        <figure class="clip-card">
+          <video class="clip-card__video" autoplay muted loop playsinline preload="metadata" poster="assets/img/buddies-poster.jpg" aria-label="Twee opblaasbare smiley-poppetjes die springen en elkaar een knuffel geven">
+            <source src="assets/video/buddies.webm" type="video/webm">
+            <source src="assets/video/buddies.mp4" type="video/mp4">
+          </video>
+          <figcaption class="clip-card__label">Hobbymaatjes, gevonden.</figcaption>
+        </figure>
+        <p class="people__source">*SCP, Nederlanders van 12 jaar en ouder.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOE HET WERKT -->
+  <section class="band band--sky how" id="hoe-het-werkt">
+    <img class="how__ribbon" src="assets/img/ribbon-knot.webp" alt="" width="2000" height="1086" loading="lazy" data-depth="-0.08">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Hoe het werkt</span>
+        <h2 class="display display--lg">Kies het. Vind het. Doe het.</h2>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step__num" aria-hidden="true">1</span>
+          <img class="step__sticker" src="assets/img/cut/magnifier.webp" alt="" width="635" height="682" loading="lazy">
+          <h3>Kies je ding</h3>
+          <p>Vertel ons waar je van houdt, of wat je altijd al eens wilde proberen. Wij laten zien wat je nodig hebt om te beginnen.</p>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">2</span>
+          <img class="step__sticker" src="assets/img/cut/pin.webp" alt="" width="524" height="681" loading="lazy">
+          <h3>Vind het in de buurt</h3>
+          <p>Zie welke spullen je kunt lenen, welke kennis er wordt aangeboden en wie je kunt ontmoeten, allemaal vlak bij huis.</p>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">3</span>
+          <img class="step__sticker" src="assets/img/cut/guitar.webp" alt="" width="653" height="681" loading="lazy">
+          <h3>Ga het doen</h3>
+          <p>Leen de spullen, boek de les of spreek af. Laat een review achter en probeer daarna het volgende.</p>
+        </li>
+      </ol>
+
+      <div class="sharers">
+        <h3 class="sharers__title">Spullen of skills over?</h3>
+        <div class="sharers__grid">
+          <article class="share-card share-card--mint">
+            <img src="assets/img/cut/drill.webp" alt="" width="596" height="682" loading="lazy">
+            <div>
+              <h4>Verhuur je spullen</h4>
+              <p>De boormachine die je twee keer hebt gebruikt, de tent van dat ene festival. Verhuur ze aan buren en verdien er iets bij.</p>
+            </div>
+          </article>
+          <article class="share-card share-card--lavender">
+            <img src="assets/img/cut/palette.webp" alt="" width="682" height="646" loading="lazy">
+            <div>
+              <h4>Deel wat je weet</h4>
+              <p>Geef een gitaarles, help iemand met behangen of organiseer een workshop. Jij bepaalt de prijs, of je doet het gratis.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AANMELDEN -->
+  <section class="band band--lavender join" id="aanmelden">
+    <div class="wrap join__grid">
+      <div class="join__copy">
+        <span class="eyebrow">Waarom nu aanmelden?</span>
+        <h2 class="display display--lg">Wees er vroeg bij.</h2>
+        <p class="lede">We bouwen Hobbre op dit moment. Meld je aan voor de wachtlijst, dan ben je als eerste binnen als we opengaan en help je bepalen wat Hobbre wordt.</p>
+
+        <ul class="perks">
+          <li class="perk">
+            <span class="perk__icon perk__icon--sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 9V6h18v3a3 3 0 0 0 0 6v3H3v-3a3 3 0 0 0 0-6Z"/><path d="M14 6v2M14 11v2M14 16v2"/></svg>
+            </span>
+            <div><h3>Als eerste binnen</h3><p>Je krijgt toegang voor iedereen anders zodra Hobbre opengaat in Utrecht.</p></div>
+          </li>
+          <li class="perk">
+            <span class="perk__icon perk__icon--orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7Z"/></svg>
+            </span>
+            <div><h3>Badge voor pioniers</h3><p>Een badge op je profiel die laat zien dat je er vanaf dag één bij was.</p></div>
+          </li>
+          <li class="perk">
+            <span class="perk__icon perk__icon--mint" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4Z"/><path d="M8 10h8"/></svg>
+            </span>
+            <div><h3>Praat mee</h3><p>Stem mee over nieuwe functies en over de hobby's waarmee we starten.</p></div>
+          </li>
+          <li class="perk">
+            <span class="perk__icon perk__icon--blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8Z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg>
+            </span>
+            <div><h3>Voorsprong als verhuurder</h3><p>Zet je spullen en skills er al voor de lancering op, zodat buren jou als eerste vinden.</p></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="join__form-wrap">
+        <img class="join__sticker join__sticker--a" src="assets/img/cut/racket.webp" alt="" width="577" height="682" loading="lazy" data-depth="0.12">
+        <img class="join__sticker join__sticker--b" src="assets/img/cut/camera.webp" alt="" width="682" height="560" loading="lazy" data-depth="0.2">
+
+        <form class="signup-card" id="signup" data-signup="full" novalidate>
+          <div class="signup-card__body">
+            <h3 class="signup-card__title">Reserveer je plek</h3>
+            <p class="signup-card__sub">Duurt 20 seconden. We mailen je alleen over Hobbre.</p>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label for="signup-name">Voornaam <span class="optional">(optioneel)</span></label>
+                <input class="field" id="signup-name" name="name" type="text" autocomplete="given-name" placeholder="Sam">
+              </div>
+              <div class="field-group">
+                <label for="signup-city">Woonplaats</label>
+                <input class="field" id="signup-city" name="city" type="text" autocomplete="address-level2" placeholder="Utrecht">
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="signup-hobby">Welke hobby wil je proberen? <span class="optional">(optioneel)</span></label>
+              <input class="field" id="signup-hobby" name="hobby" type="text" placeholder="Bijvoorbeeld boulderen of keramiek">
+            </div>
+
+            <div class="field-group">
+              <label for="signup-email">E-mail</label>
+              <input class="field" id="signup-email" name="email" type="email" autocomplete="email" placeholder="jij@voorbeeld.nl" required>
+              <p class="field-error" id="signup-email-error" role="alert"></p>
+            </div>
+
+            <fieldset class="roles">
+              <legend>Ik wil… <span class="optional">(kies wat je wilt)</span></legend>
+              <div class="roles__list">
+                <label class="role"><input type="checkbox" name="roles" value="discover" id="role-discover"><span>Nieuwe hobby's proberen</span></label>
+                <label class="role"><input type="checkbox" name="roles" value="borrow" id="role-borrow"><span>Spullen lenen</span></label>
+                <label class="role"><input type="checkbox" name="roles" value="lend" id="role-lend"><span>Mijn spullen verhuren</span></label>
+                <label class="role"><input type="checkbox" name="roles" value="skills" id="role-skills"><span>Mijn skills delen</span></label>
+                <label class="role"><input type="checkbox" name="roles" value="buddies" id="role-buddies"><span>Hobbymaatjes vinden</span></label>
+                <label class="role"><input type="checkbox" name="roles" value="business" id="role-business"><span>Ik heb een hobbybedrijf</span></label>
+              </div>
+            </fieldset>
+
+            <button class="btn btn--solid btn--lg btn--block" type="submit">Meld je aan</button>
+            <p class="signup-card__fine">Geen spam. Je kunt je altijd afmelden.</p>
+          </div>
+
+          <div class="signup-card__success" hidden>
+            <img src="assets/img/cut/buddies.webp" alt="" width="682" height="547">
+            <h3 class="display" tabindex="-1">Je staat op de lijst!</h3>
+            <p>We mailen je op <strong data-success-email>je e-mailadres</strong> zodra Hobbre bij jou in de buurt opengaat.</p>
+            <button class="btn btn--ghost" type="button" data-share>Deel Hobbre met een vriend</button>
+            <p class="share-msg" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <aside class="biz">
+        <img class="biz__sticker" src="assets/img/cut/palette.webp" alt="" width="682" height="646" loading="lazy">
+        <div class="biz__copy">
+          <span class="tag tag--light">Voor bedrijven</span>
+          <h3>Heb je een hobbywinkel, studio of club?</h3>
+          <p>Word een Hobbre Honk: de plek in de buurt waar mensen hun nieuwe hobby beginnen. Van eerste proefles tot vaste klant.</p>
+        </div>
+        <a class="btn btn--light btn--lg" href="bedrijven.html">Word een Honk</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- VRAGEN -->
+  <section class="band band--peach faq" id="vragen">
+    <div class="wrap faq__grid">
+      <div class="faq__head">
+        <span class="eyebrow">Vragen</span>
+        <h2 class="display display--lg">Goede vragen.</h2>
+        <img class="faq__sticker" src="assets/img/cut/yarn.webp" alt="" width="586" height="682" loading="lazy" data-depth="0.1">
+      </div>
+
+      <div class="faq__list">
+        <details class="qa" open>
+          <summary>Wat is Hobbre, in één zin?</summary>
+          <div class="qa__a"><p>Een platform waar je hobby's ontdekt, spullen leent en verhuurt, kennis deelt en mensen in de buurt vindt om het samen mee te doen.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Wat kost het?</summary>
+          <div class="qa__a"><p>Aanmelden en rondkijken is gratis. Als je via Hobbre spullen huurt of een les of activiteit boekt, zit er een kleine servicevergoeding in de prijs. Zo houden we het platform draaiende.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Waar is Hobbre beschikbaar?</summary>
+          <div class="qa__a"><p>We beginnen in en rond Utrecht en breiden daarna uit naar de rest van Nederland. Meld je aan, waar je ook woont: de wachtlijst helpt ons kiezen waar we hierna naartoe gaan.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Wanneer gaat het live?</summary>
+          <div class="qa__a"><p>We bouwen er nu aan. Iedereen op de wachtlijst hoort het als eerste en krijgt toegang voor de officiële lancering.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Wat kan ik delen op Hobbre?</summary>
+          <div class="qa__a"><p>Hobbyspullen die je niet vaak gebruikt, zoals tenten, camera's, instrumenten, gereedschap en sportspullen. Je kennis en vaardigheden. Of je tijd, als hobbymaatje. Jij bepaalt wat je aanbiedt en wat je ervoor vraagt.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Komt er een app?</summary>
+          <div class="qa__a"><p>Hobbre start als webapp die werkt op elke telefoon en computer. Apps voor iOS en Android volgen later.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Ik heb een hobbybedrijf. Kan ik meedoen?</summary>
+          <div class="qa__a"><p>Ja. Winkels, studio's, clubs en docenten kunnen straks producten, workshops en lessen aanbieden op Hobbre. Op Hobbre heet zo'n plek een Honk. <a href="bedrijven.html">Lees hoe je een Honk wordt</a>.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFSLUITER -->
+  <section class="band band--white finale" aria-labelledby="finale-title">
+    <div class="finale__stage">
+      <img class="finale__ribbon" src="assets/img/ribbon-knot.webp" alt="" width="2000" height="1086" loading="lazy" data-depth="-0.05">
+      <h2 class="display display--xxl finale__title" id="finale-title">
+        <span>Tot snel</span>
+        <span>in je straat.</span>
+      </h2>
+      <div class="sticker" style="--x:3%;--y:4%;--w:12%;--r:-12deg" data-depth="0.16"><img src="assets/img/cut/drill.webp" alt="" width="596" height="682" loading="lazy"></div>
+      <div class="sticker" style="--x:85%;--y:0%;--w:12%;--r:10deg" data-depth="0.22"><img src="assets/img/cut/plant.webp" alt="" width="581" height="682" loading="lazy"></div>
+      <div class="sticker" style="--x:86%;--y:62%;--w:11%;--r:-8deg" data-depth="0.12"><img src="assets/img/cut/pin.webp" alt="" width="524" height="681" loading="lazy"></div>
+      <div class="sticker" style="--x:1%;--y:64%;--w:13%;--r:8deg" data-depth="0.2"><img src="assets/img/cut/racket.webp" alt="" width="577" height="682" loading="lazy"></div>
+    </div>
+    <form class="quick-signup quick-signup--center" data-signup="quick" novalidate>
+      <label class="sr-only" for="finale-email">E-mailadres</label>
+      <input class="field field--pill" id="finale-email" name="email" type="email" autocomplete="email" placeholder="jij@voorbeeld.nl" required>
+      <button class="btn btn--solid btn--lg" type="submit">Meld je aan</button>
+      <p class="quick-signup__msg" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+</main>
+
+<footer class="footer footer--street" id="site-footer" data-footer="1">
+  <div class="fstreet__top">
+    <img class="fstreet__logo" src="assets/img/hobbre-logo.webp" alt="Hobbre" width="2000" height="519" loading="lazy">
+    <p class="fstreet__line">Ruil schermtijd in voor mensentijd.</p>
+    <nav aria-label="Footer"><ul class="flinks"><li><a href="#wat-is-hobbre">Wat is Hobbre</a></li><li><a href="#hobbys">Hobby's</a></li><li><a href="#hoe-het-werkt">Hoe het werkt</a></li><li><a href="bedrijven.html">Voor bedrijven</a></li><li><a href="#vragen">Vragen</a></li><li class="flinks__cta"><a href="#aanmelden">Meld je aan</a></li></ul></nav>
+    <p class="fcontact">Vragen? <a href="mailto:info@hobbre.com">info@hobbre.com</a></p>
+  </div>
+  <div class="fstreet__street" data-inflate-on-view aria-hidden="true">
+    <img src="assets/img/houses/house-1.webp" alt="" width="388" height="837" loading="lazy" style="--i:0">
+    <img src="assets/img/houses/house-2.webp" alt="" width="369" height="836" loading="lazy" style="--i:1">
+    <img src="assets/img/houses/house-3.webp" alt="" width="345" height="857" loading="lazy" style="--i:2">
+    <img src="assets/img/houses/house-4.webp" alt="" width="382" height="833" loading="lazy" style="--i:3">
+    <img src="assets/img/houses/house-5.webp" alt="" width="350" height="837" loading="lazy" style="--i:4">
+    <img src="assets/img/houses/house-6.webp" alt="" width="401" height="851" loading="lazy" style="--i:5">
+  </div>
+  <div class="fstreet__pavement"><p class="footer__legal">© <span data-year>2026</span> Hobbre. Gemaakt in Nederland, voor mensen die wel wat beters te doen hebben dan scrollen.</p></div>
+</footer>
+
+<script src="main.js?v=20260927e" defer></script>
+</body>
+</html>

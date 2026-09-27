@@ -1,0 +1,361 @@
+/* ==========================================================================
+   Hobbre Honk — page for businesses
+   Builds on styles.css (tokens, nav, pillars, steps, FAQ, form, footer).
+   ========================================================================== */
+
+/* Every section paints its own band; the lavender body fills the strip
+   behind the sticky nav so it blends into the hero. */
+body[data-page="bedrijven"] { background: var(--lavender); }
+.band--violet { background: var(--violet); color: var(--paper); }
+
+/* ---------- Hero: a street that inflates, with the Honk in the middle ---------- */
+
+.bhero {
+  position: relative;
+  overflow: clip;
+  padding-top: clamp(40px, 5vw, 80px);
+  background: var(--lavender);
+  text-align: center;
+}
+.bhero__copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.bhero__title { font-size: clamp(60px, 9.2vw, 152px); }
+.bhero__lede {
+  max-width: 40ch;
+  font-size: clamp(19px, 1.9vw, 25px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.bhero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bstreet {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(6px, 1.4vw, 22px);
+  height: clamp(190px, 26vw, 370px);
+  margin-top: clamp(40px, 5vw, 72px);
+  padding-inline: var(--gutter);
+}
+.bstreet__house {
+  height: 100%;
+  width: auto;
+  max-width: none;
+  transform-origin: 50% 100%;
+  animation: inflate .95s cubic-bezier(.3,1.25,.5,1) both;
+  animation-delay: calc(var(--i, 0) * 120ms + 250ms);
+}
+.bstreet__honk {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.bstreet__honk .bstreet__house { height: 96%; }
+.bstreet__badge {
+  top: -16%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  width: clamp(76px, 8vw, 122px);
+  transform: translateX(-50%) rotate(-10deg);
+  animation: badge-drop .8s cubic-bezier(.3,1.6,.5,1) both;
+  animation-delay: 1.05s;
+}
+.bhero__pavement {
+  position: relative;
+  z-index: 2;
+  height: clamp(28px, 3.4vw, 48px);
+  background: var(--peach);
+  border-top: var(--line);
+}
+
+@keyframes inflate {
+  0%   { transform: scale(.55, .04); opacity: 0; }
+  12%  { opacity: 1; }
+  55%  { transform: scale(1.03, 1.08); }
+  78%  { transform: scale(.99, .97); }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes badge-drop {
+  0%   { transform: translate(-50%, -70px) rotate(-40deg); opacity: 0; }
+  100% { transform: translateX(-50%) rotate(-10deg); opacity: 1; }
+}
+
+@media (max-width: 560px) {
+  .bstreet > .bstreet__house:first-child,
+  .bstreet > .bstreet__house:last-child { display: none; }
+  .bstreet { height: 200px; }
+}
+
+/* ---------- Wat is een Honk: dictionary card ---------- */
+
+.honk__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(40px, 5vw, 88px);
+  align-items: center;
+}
+.honk__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.dict {
+  position: relative;
+  padding: clamp(28px, 3.4vw, 48px);
+  border: var(--line);
+  border-radius: 40px;
+  background: var(--sun);
+  transform: rotate(1.5deg);
+}
+.dict__word { font-size: clamp(88px, 11vw, 176px); }
+.dict__meta {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+}
+.dict__meta span { font-weight: 500; }
+.dict__senses {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0 0;
+  padding-left: 1.4em;
+  font-size: 18px;
+  line-height: 1.45;
+}
+.dict__senses li::marker { font-weight: 800; }
+.dict__sticker {
+  position: absolute;
+  top: -44px;
+  right: 28px;
+  width: 88px;
+  transform: rotate(12deg);
+}
+
+/* ---------- Aanbod: offer types with an example listing ---------- */
+
+.offers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+}
+.offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 300px;
+  padding: clamp(24px, 3vw, 36px);
+  border: var(--line);
+  border-radius: 36px;
+  background: var(--bg);
+}
+.offer--mint { --bg: var(--mint); }
+.offer--sky { --bg: var(--sky); }
+.offer--lavender { --bg: var(--lavender); }
+.offer--sun { --bg: var(--sun); }
+.offer__text h3 {
+  margin-bottom: 8px;
+  font-size: var(--text-h3);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.offer__text p { max-width: 42ch; }
+.offer__example {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 420px;
+  padding: 16px 20px 14px 14px;
+  border: var(--line);
+  border-radius: 22px;
+  background: var(--paper);
+  transform: rotate(-1.2deg);
+}
+.offer:nth-child(even) .offer__example { transform: rotate(1.2deg); }
+.offer__example img {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.offer__example strong { display: block; font-size: 17px; font-weight: 800; }
+.offer__example > div > span { font-size: 14px; color: #4d4640; }
+.offer__label {
+  position: absolute;
+  top: -11px;
+  left: 16px;
+  padding: 2px 10px;
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ---------- Voor wie: violet reel ---------- */
+
+.reel--violet { background: var(--violet); color: var(--paper); }
+.reel__label {
+  width: fit-content;
+  margin: 0 0 clamp(12px, 1.6vw, 20px) var(--gutter);
+  padding: 8px 14px;
+  border: var(--line);
+  border-radius: var(--r-pill);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.032em;
+  text-transform: uppercase;
+}
+
+/* ---------- Pakketten ---------- */
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+  max-width: 1040px;
+  margin-inline: auto;
+}
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: clamp(28px, 3vw, 40px);
+  border: var(--line);
+  border-radius: 40px;
+  background: var(--paper);
+}
+.plan--plus { background: var(--violet); color: var(--paper); }
+.plan--plus .tag { color: var(--ink); }
+.plan__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.plan__head h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-variation-settings: "wdth" 75, "opsz" 96;
+  font-size: clamp(44px, 4.4vw, 68px);
+  line-height: .8;
+  text-transform: uppercase;
+}
+.plan__price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding-block: 18px;
+  border-block: 1px solid;
+}
+.plan__price strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-variation-settings: "wdth" 75, "opsz" 96;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: .8;
+  font-variant-numeric: tabular-nums;
+}
+.plan__price span { font-weight: 700; }
+.plan__list {
+  flex: 1;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.plan__list li { display: flex; align-items: flex-start; gap: 10px; }
+.plan__list li::before {
+  content: "✓";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border: var(--line);
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+}
+.plan--plus .plan__list li::before { background: var(--sun); }
+.plan__sticker {
+  position: absolute;
+  top: -64px;
+  right: 24px;
+  width: 104px;
+  transform: rotate(8deg);
+}
+.plans__note {
+  margin-top: 28px;
+  font-size: 14px;
+  text-align: center;
+  color: #4d4640;
+}
+
+/* ---------- Aanmelden ---------- */
+
+.benroll__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 580px);
+  gap: clamp(32px, 5vw, 88px);
+  align-items: start;
+}
+.benroll__copy {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.benroll .signup-card { color: var(--ink); }
+.benroll .signup-card__success img { width: 150px; }
+.field--select {
+  appearance: none;
+  padding-right: 40px;
+  background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d0c0b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center / 16px;
+  cursor: pointer;
+}
+.benroll .field-error { color: #b8360a; }
+
+/* ---------- Stacking ---------- */
+
+@media (max-width: 900px) {
+  .honk__grid,
+  .offers,
+  .plans,
+  .benroll__grid { grid-template-columns: 1fr; }
+  .benroll__copy { position: static; }
+  .plans { row-gap: 72px; }
+}

@@ -1,0 +1,398 @@
+/* ==========================================================================
+   Hobbre — hobby categories (3 variants)
+   1 · Stickerkaarten  2 · Menukaart  3 · Scrollrij
+   ========================================================================== */
+
+/* Category colours, shared by all variants */
+.catcard--lavender, .catmenu__row--lavender, .catpanel--lavender, .railcard--lavender { --bg: var(--lavender); }
+.catcard--orange,   .catmenu__row--orange,   .catpanel--orange,   .railcard--orange   { --bg: var(--orange); }
+.catcard--sky,      .catmenu__row--sky,      .catpanel--sky,      .railcard--sky      { --bg: var(--sky); }
+.catcard--mint,     .catmenu__row--mint,     .catpanel--mint,     .railcard--mint     { --bg: var(--mint); }
+.catcard--sun,      .catmenu__row--sun,      .catpanel--sun,      .railcard--sun      { --bg: var(--sun); }
+.catcard--blue,     .catmenu__row--blue,     .catpanel--blue,     .railcard--blue     { --bg: var(--blue); }
+.catcard--pink,     .catmenu__row--pink,     .catpanel--pink,     .railcard--pink     { --bg: var(--pink); }
+.catcard--violet,   .catmenu__row--violet,   .catpanel--violet,   .railcard--violet   { --bg: var(--violet); --fg: var(--paper); }
+
+/* ---------- Shared heading ---------- */
+
+.cats__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px 40px;
+  margin-bottom: clamp(40px, 5vw, 72px);
+}
+.cats__titles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 980px;
+}
+.cats__sub {
+  max-width: 24ch;
+  font-size: var(--text-sub);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.cats__more {
+  margin-top: clamp(36px, 4vw, 56px);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+}
+.cats__more a { font-weight: 800; }
+
+.cats .chips li { color: var(--ink); }
+.cats .chips .chips__more { background: var(--ink); color: var(--paper); }
+
+/* ---------- 1 · Stickerkaarten ---------- */
+
+.catgrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 1.8vw, 26px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.catcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 260px;
+  padding: 24px 24px 26px;
+  border: var(--line);
+  border-radius: 32px;
+  background: var(--bg);
+  color: var(--fg, var(--ink));
+  transition: transform .35s cubic-bezier(.3,1.5,.5,1);
+}
+.catcard:nth-child(odd)  { transform: rotate(-.8deg); }
+.catcard:nth-child(even) { transform: rotate(.8deg); }
+.catcard:hover { transform: translateY(-6px) rotate(0deg); }
+.catcard__count {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: .8;
+}
+.catcard h3 {
+  max-width: 11ch;
+  font-size: clamp(22px, 1.9vw, 28px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.catcard .chips { max-width: 66%; }
+.catcard__sticker {
+  position: absolute;
+  right: -16px;
+  bottom: -24px;
+  width: 46%;
+  max-width: 150px;
+  transform: rotate(10deg);
+  transition: transform .45s cubic-bezier(.3,1.6,.5,1);
+  pointer-events: none;
+}
+.catcard:hover .catcard__sticker { transform: translateY(-8px) rotate(-6deg) scale(1.1); }
+
+@media (max-width: 1100px) {
+  .catgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 32px; }
+}
+@media (max-width: 560px) {
+  .catgrid { grid-template-columns: 1fr; row-gap: 28px; }
+  .catcard { min-height: 200px; }
+  .catcard__sticker { width: 34%; right: -8px; }
+}
+
+/* ---------- 2 · Menukaart ---------- */
+
+.catmenu {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+}
+.catmenu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--line);
+}
+.catmenu__row { border-bottom: var(--line); }
+.catmenu__tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 14px 12px;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color .2s, padding .3s cubic-bezier(.3,1.4,.5,1);
+}
+.catmenu__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-variation-settings: "wdth" 75, "opsz" 96;
+  font-size: clamp(34px, 4.3vw, 64px);
+  line-height: .86;
+  text-transform: uppercase;
+}
+.catmenu__count {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.catmenu__tab[aria-selected="true"] {
+  padding-left: 26px;
+  background: var(--bg);
+  color: var(--fg, var(--ink));
+}
+.catmenu__tab:focus-visible { outline-offset: -3px; }
+.catmenu__inline { display: none; }
+
+.catmenu__stage { position: sticky; top: 110px; }
+.catpanel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 12px;
+  aspect-ratio: 1 / 1.08;
+  max-width: 100%;
+  padding: clamp(24px, 3vw, 36px);
+  border: var(--line);
+  border-radius: 40px;
+  background: var(--bg);
+  color: var(--fg, var(--ink));
+  overflow: hidden;
+}
+.catpanel__sticker {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  width: 56%;
+  translate: -50% 0;
+  rotate: -8deg;
+  animation: pop .6s cubic-bezier(.2,1.5,.4,1) both;
+}
+.catpanel__count {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.catpanel h3 { font-size: clamp(40px, 4vw, 64px); }
+.catpanel .chips { margin: 0; }
+
+@media (max-width: 900px) {
+  .catmenu { grid-template-columns: 1fr; }
+  .catmenu__stage { display: none; }
+  .catmenu__tab[aria-selected="true"] + .catmenu__inline {
+    display: block;
+    padding: 0 14px 16px 26px;
+    background: var(--bg);
+  }
+  .catmenu__inline .chips { margin: 0; }
+}
+
+/* ---------- 3 · Scrollrij ---------- */
+
+.cats--rail { background: var(--peach); color: var(--ink); }
+@media (min-width: 900px) {
+  .cats--rail .cats__head { flex-wrap: nowrap; }
+  .cats--rail .cats__titles { max-width: 64%; }
+}
+.cats--rail .display--lg { font-size: clamp(48px, 6.4vw, 104px); }
+.cats--rail .cats__head { margin-bottom: clamp(20px, 3vw, 40px); }
+
+.rail { position: relative; }
+.rail__sticky {
+  padding-block: clamp(72px, 9vw, 120px) clamp(48px, 6vw, 80px);
+  overflow: clip;
+}
+.rail__viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 28px var(--gutter) 40px;
+  scrollbar-width: none;
+}
+.rail__viewport::-webkit-scrollbar { display: none; }
+.rail__track {
+  display: flex;
+  gap: clamp(16px, 2vw, 28px);
+  width: max-content;
+}
+.railcard {
+  position: relative;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 12px;
+  width: clamp(250px, 24vw, 340px);
+  aspect-ratio: 3 / 4;
+  padding: 26px;
+  border: 1px solid var(--ink);
+  border-radius: 36px;
+  background: var(--bg);
+  color: var(--fg, var(--ink));
+  transform: rotate(var(--tilt, 0deg));
+  scroll-snap-align: center;
+  transition: transform .35s cubic-bezier(.3,1.5,.5,1);
+}
+.railcard:hover { transform: rotate(0deg) translateY(-8px); }
+.railcard__sticker {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  width: 60%;
+  transform: translateX(-50%) rotate(-8deg);
+  pointer-events: none;
+}
+.railcard__count {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  border: var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transform: rotate(12deg);
+}
+.railcard__count strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-variation-settings: "wdth" 75, "opsz" 96;
+  font-size: 32px;
+  line-height: .8;
+}
+.railcard h3 { font-size: clamp(32px, 2.8vw, 44px); }
+.railcard .chips { margin: 0; }
+/* Last card: visitors suggest a hobby they'd like to find on Hobbre */
+.railcard--suggest {
+  justify-content: flex-end;
+  gap: 14px;
+  background: var(--orange);
+}
+.railcard--suggest h3 { font-size: clamp(36px, 3.2vw, 50px); }
+.railcard--suggest p { font-size: 15px; font-weight: 600; line-height: 1.4; }
+.railcard__plus {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 64px;
+  transform: rotate(12deg);
+}
+.suggest {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+.suggest .field--pill { padding-block: 14px; }
+.suggest .btn { width: 100%; }
+.suggest__msg {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.suggest__msg:empty { display: none; }
+.suggest.is-done .field,
+.suggest.is-done button[type="submit"] { display: none; }
+.suggest.is-done .suggest__msg {
+  padding: 14px 16px;
+  border: var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+}
+.suggest__again {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: 800 13px/1.2 var(--font-ui);
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.rail__foot { display: flex; align-items: center; gap: 20px; }
+.rail__progress {
+  flex: 1;
+  height: 8px;
+  border: var(--line);
+  border-radius: var(--r-pill);
+  background: var(--paper);
+  overflow: hidden;
+}
+.rail__progress span {
+  display: block;
+  height: 100%;
+  background: var(--orange);
+  transform: scaleX(var(--rail-p, 0));
+  transform-origin: left center;
+}
+.rail__hint {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.032em;
+  text-transform: uppercase;
+  color: #5c534c;
+  white-space: nowrap;
+}
+.rail__hint-scroll { display: none; }
+.rail.is-pinned .rail__hint-scroll { display: inline; }
+.rail.is-pinned .rail__hint-swipe { display: none; }
+
+/* Wide screens: main.js pins the section and turns vertical scroll into a
+   sideways slide. */
+.rail.is-pinned { height: var(--rail-h, auto); }
+.rail.is-pinned .rail__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 88px 32px;
+}
+.rail.is-pinned .rail__viewport { overflow: visible; scroll-snap-type: none; }
+.rail.is-pinned .rail__track { transform: translate3d(var(--rail-x, 0px), 0, 0); }
+
+
+
+@media (max-width: 560px) {
+  .railcard__plus { width: 44px; top: 10px; right: 10px; }
+}

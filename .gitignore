@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Lokale kopie van de lege GitHub-repository (niet nodig: deze map is nu zelf de repository)
+/Hobbre/
+
+# Originele beelden op volle resolutie uit Higgsfield (±68 MB). Niet nodig voor de website;
+# de weboptimaliseerde versies staan in assets/.
+/design-source/
+
+# Python
+__pycache__/

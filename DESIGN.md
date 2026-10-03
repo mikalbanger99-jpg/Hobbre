@@ -840,7 +840,7 @@ item you could not meet.
 | `styles.css` | Tokens, base, type, buttons, fields, ticker, nav, bands, stickers, cards, FAQ, signup |
 | `heroes.css` | Hero layouts, listing cards, street scene and scroll-scene styles |
 | `categories.css` | Category colours and the category rail |
-| `footers.css` | Footer variants ("Straat" is live) |
+| `footers.css` | The "Straat" footer |
 | `bedrijven.css` | Business page: inflating street hero, dictionary card, offers, plans |
 | `main.js` | Forms, parallax, scroll scenes, rail, inflate-on-view, reduced motion |
 | `assets/img/cut/` | Die-cut stickers |

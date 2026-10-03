@@ -1,8 +1,7 @@
 /* ==========================================================================
-   Hobbre — footers (3 variants)
-   Brand rule: the Hobbre logo is never placed on a black background. Every
-   footer here puts the original orange logo on a light surface.
-   1 · Straat   2 · Stickervel   3 · Poster
+   Hobbre — footer ("Straat")
+   Brand rule: the Hobbre logo is never placed on a black background. The
+   footer puts the original orange logo on a light surface.
    ========================================================================== */
 
 .footer {
@@ -47,7 +46,7 @@
 .fcontact { font-weight: 600; }
 .fcontact a { font-weight: 800; text-underline-offset: 3px; }
 
-/* ---------- 1 · Straat: sky, big logo, houses that inflate on the pavement ---------- */
+/* ---------- Straat: sky, big logo, houses that inflate on the pavement ---------- */
 
 .footer--street { background: var(--sky); }
 .fstreet__top {
@@ -103,121 +102,3 @@
 @media (max-width: 560px) {
   .fstreet__street img:nth-child(n + 5) { display: none; }
 }
-
-/* ---------- 2 · Stickervel: a white sticker sheet on a yellow table ---------- */
-
-.footer--sheet {
-  background: var(--sun);
-  padding: clamp(56px, 7vw, 96px) var(--gutter) 0;
-}
-.fsheet {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: clamp(32px, 5vw, 80px);
-  max-width: var(--max);
-  margin-inline: auto;
-  padding: clamp(28px, 4vw, 56px);
-  border: var(--line);
-  border-radius: 40px;
-  background: var(--paper);
-}
-.fsheet__brand {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
-}
-.fsheet__logo { width: min(100%, 420px); }
-.fsheet__line {
-  max-width: 22ch;
-  font-size: clamp(20px, 2vw, 26px);
-  font-weight: 700;
-  line-height: 1.25;
-}
-.fsheet__stickers {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  margin-top: 8px;
-}
-.fsheet__stickers img { width: 72px; }
-.fsheet__stickers img:nth-child(odd) { transform: rotate(-10deg); }
-.fsheet__stickers img:nth-child(even) { transform: rotate(8deg) translateY(-6px); }
-.fsheet__cols {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-.fsheet__cols h2 {
-  margin-bottom: 14px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #6b625b;
-}
-.fsheet__cols ul {
-  display: grid;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.fsheet__cols a,
-.fsheet__cols li {
-  font-size: 17px;
-  font-weight: 700;
-}
-.fsheet__cols a {
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-decoration-color: transparent;
-  text-underline-offset: 5px;
-  transition: text-decoration-color .2s;
-}
-.fsheet__cols a:hover { text-decoration-color: var(--orange); }
-.fsheet__legal {
-  max-width: var(--max);
-  margin-inline: auto;
-  padding: 22px 0 26px;
-  text-align: center;
-}
-
-@media (max-width: 900px) {
-  .fsheet { grid-template-columns: 1fr; }
-}
-@media (max-width: 560px) {
-  .fsheet__cols { grid-template-columns: 1fr 1fr; }
-  .fsheet__cols > div:last-child { grid-column: 1 / -1; }
-}
-
-/* ---------- 3 · Poster: peach, the core value large, logo full width ---------- */
-
-.footer--poster {
-  background: var(--peach);
-  padding: clamp(64px, 8vw, 112px) var(--gutter) 0;
-}
-.fposter {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(28px, 4vw, 56px);
-  max-width: var(--max);
-  margin-inline: auto;
-}
-.fposter__line { font-size: clamp(52px, 8vw, 132px); }
-.fposter__logo { width: 100%; }
-.fposter__bar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px 24px;
-  padding-top: 24px;
-  border-top: var(--line);
-}
-.fposter__bar .flinks { justify-content: flex-start; }
-.fposter__legal { margin-top: calc(-1 * clamp(12px, 2vw, 32px)); padding-bottom: 28px; }
-
-

@@ -396,7 +396,7 @@ p { text-wrap: pretty; }
   100% { scale: 1; opacity: 1; }
 }
 
-/* ---------- Hero: shared parts (layouts per variant live in heroes.css) ---------- */
+/* ---------- Hero: shared parts (the hero layout lives in heroes.css) ---------- */
 
 .hero { position: relative; overflow: clip; }
 

@@ -12,47 +12,35 @@ python3 -m http.server 5173
 
 Open daarna http://localhost:5173.
 
-## Hero-varianten
+## Hero
 
-- `hero-varianten.html` toont alle hero's onder elkaar om te vergelijken.
-  Bovenaan staan 6 en 7: buurtfeed (variant 4) met de straat (variant 2)
-  eronder en een scroll-effect.
-  - **6 · Opblazen:** de straat blijft staan, de lucht kleurt blauw en de
-    huisjes blazen zich één voor één op, met een label erboven.
-  - **7 · Naar huis:** op schermen vanaf 1000×700 blijft de hele hero staan en
-    vliegt elk kaartje uit de feed naar zijn eigen huisje. Kleinere schermen
-    krijgen opblazende huisjes onder de feed.
-  - Op mobiel is de straat breder dan het scherm en schuift hij mee.
-- **`index.html` gebruikt variant 7 als hero.** Met `index.html?hero=1` (t/m `6`)
-  zet je ter vergelijking een andere variant bovenaan de echte pagina.
+- Bovenaan staat de buurtfeed: titel, ondertitel en aanmeldformulier links,
+  kaartjes uit "jouw straat" rechts.
+- Op schermen vanaf 1000×700 blijft de hero staan terwijl je scrolt: de straat
+  komt omhoog en elk kaartje uit de feed vliegt naar zijn eigen huisje.
+  Kleinere schermen krijgen opblazende huisjes onder de feed.
+- Op mobiel is de straat breder dan het scherm en schuift hij mee.
 - De losse huisjes staan in `assets/img/houses/`. De scroll-logica staat in
   `main.js` onder "Street scenes".
 
-Opruimen als de keuze definitief is: `hero-varianten.html`, het `?hero=`-blok
-bovenin `main.js` en de opmaak van varianten 1–6 in `heroes.css` kunnen dan weg.
-
 ## Categorieën (Hobby's ontdekken)
 
-- `categorie-varianten.html` toont drie varianten van de categoriesectie:
-  **1 · Stickerkaarten**, **2 · Menukaart** en **3 · Scrollrij**.
-- **`index.html` gebruikt variant 3 (Scrollrij)** op een perzikkleurige band.
-  Bekijk de andere in de pagina met `index.html?cats=1#hobbys` of `?cats=2#hobbys`.
+- De categorieën staan als scrollrij op een perzikkleurige band. Op brede
+  schermen schuiven de kaarten opzij terwijl je naar beneden scrolt; op mobiel
+  swipe je ze.
 - De laatste kaart van de rij, "Jouw hobby hier?", laat bezoekers zelf een
   hobby voorstellen. Voorstellen gaan naar hetzelfde `WAITLIST_ENDPOINT` met
   `kind: "suggestion"` en worden tot die tijd lokaal bewaard in
   `localStorage` onder `hobbre-suggestions`.
-- De categorieën (namen, aantallen, voorbeeldhobby's) staan direct in de HTML
-  van elke variant.
+- De categorieën (namen, aantallen, voorbeeldhobby's) staan direct in
+  `index.html`.
 
 ## Footer
 
 **Merkregel: het Hobbre-logo staat nooit op een zwarte achtergrond.**
 
-- `footer-varianten.html` toont drie footers: **1 · Straat** (lichtblauw, huisjes
-  die opblazen op de stoep), **2 · Stickervel** (wit vel op geel, linkkolommen)
-  en **3 · Poster** (perzik, kernwaarde groot, logo over de volle breedte).
-- `index.html` en `bedrijven.html` gebruiken variant 1. Bekijk de andere met
-  `index.html?footer=2#site-footer` of `?footer=3#site-footer`.
+- `index.html` en `bedrijven.html` gebruiken de footer **Straat**: lichtblauw,
+  het logo groot in beeld en huisjes die opblazen op de stoep.
 - De opmaak staat in `footers.css`.
 
 ## Bedrijvenpagina (Hobbre Honk)
@@ -70,16 +58,13 @@ bovenin `main.js` en de opmaak van varianten 1–6 in `heroes.css` kunnen dan we
 | Pad | Wat |
 |-----|-----|
 | `index.html` | De pagina en alle teksten (Nederlands) |
-| `hero-varianten.html` | Alle hero-varianten (1–7) |
-| `categorie-varianten.html` | De drie categorie-varianten |
 | `bedrijven.html` | Pagina voor bedrijven: Hobbre Honk |
-| `categories.css` | Opmaak van de categoriesecties |
+| `categories.css` | Opmaak van de categorie-scrollrij |
 | `bedrijven.css` | Opmaak van de bedrijvenpagina |
-| `footer-varianten.html` | De drie footer-varianten |
-| `footers.css` | Opmaak van de footers |
+| `footers.css` | Opmaak van de footer |
 | `styles.css` | Designtokens (bovenaan) en alle stijlen |
-| `heroes.css` | Opmaak per hero-variant en de vergelijkingspagina |
-| `main.js` | Wachtlijstformulieren, parallax, mobiel menu, video, hero-wissel |
+| `heroes.css` | Opmaak van de hero: buurtfeed, straat en scroll-scène |
+| `main.js` | Wachtlijstformulieren, parallax, mobiel menu, video, scroll-scènes |
 | `assets/img/` | Webbeelden (WebP), logo, favicon, deelafbeelding |
 | `assets/img/cut/` | Hobby-stickers met uitgesneden witte rand |
 | `assets/video/` | Loopende video van de hobbymaatjes (WebM + MP4) |
@@ -108,7 +93,7 @@ JSON-`POST` accepteert (Formspree, Mailchimp via een kleine functie, Supabase):
 
 - De voordelen "Badge voor pioniers", "Praat mee" en "Voorsprong als
   verhuurder" zijn voorstellen. Houd alleen wat je echt gaat waarmaken.
-- De afstanden in variant 4 (150 m, 300 m …) zijn illustratief.
+- De afstanden in de buurtfeed (150 m, 300 m …) zijn illustratief.
 - Het cijfer van 46 uur vrije tijd per week komt van het SCP (12+), zoals in
   het ondernemingsplan.
 - Voeg social links toe in de footer zodra de accountnamen vaststaan.

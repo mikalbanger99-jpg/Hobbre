@@ -1,6 +1,6 @@
 /* Hobbre landing page */
 
-(async () => {
+(() => {
   "use strict";
 
   /* ------------------------------------------------------------------
@@ -14,41 +14,6 @@
   const WAITLIST_ENDPOINT = "";
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* ------------------------------------------------------------------
-     Variant previews: index.html?hero=…, ?cats=… and ?footer=… swap in that
-     variant from hero-varianten.html, categorie-varianten.html or
-     footer-varianten.html, so each one can be judged with the full page
-     around it. Without parameters the page keeps its defaults.
-     ------------------------------------------------------------------ */
-  if (document.body.dataset.page !== "variants") {
-    const params = new URLSearchParams(location.search);
-    const swaps = [
-      ["hero", "hero-varianten.html", "data-hero", "top"],
-      ["cats", "categorie-varianten.html", "data-cats", "hobbys"],
-      ["footer", "footer-varianten.html", "data-footer", "site-footer"],
-    ];
-    let swapped = false;
-    for (const [param, file, attr, id] of swaps) {
-      const want = params.get(param);
-      const current = document.querySelector(`[${attr}]`);
-      if (!want || !current || current.getAttribute(attr) === want) continue;
-      try {
-        const res = await fetch(file);
-        const doc = new DOMParser().parseFromString(await res.text(), "text/html");
-        const next = doc.querySelector(`[${attr}="${CSS.escape(want)}"]`);
-        if (next) {
-          next.id = id;
-          current.replaceWith(document.importNode(next, true));
-          swapped = true;
-        }
-      } catch { /* keep the default */ }
-    }
-    if (swapped && location.hash) {
-      requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView());
-    }
-  }
-
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   /* ---------- Storage helpers ---------- */
@@ -412,7 +377,7 @@
     update();
   }
 
-  /* ---------- Street scenes (hero 6 en 7) ----------
+  /* ---------- Street scenes ----------
      inflate: the street pins, the sky turns blue and the houses inflate
               one by one, each with a label.
      home:    on large screens the whole hero pins; the feed cards fly to
@@ -599,7 +564,7 @@
     document.fonts?.ready.then(relayout);
   }
 
-  /* ---------- Category menu (variant 2): tabs that follow the pointer ---------- */
+  /* ---------- Category menu: tabs that follow the pointer (no [data-catmenu] on the current pages) ---------- */
 
   document.querySelectorAll("[data-catmenu]").forEach((menu) => {
     const tabs = [...menu.querySelectorAll('[role="tab"]')];
@@ -625,7 +590,7 @@
     });
   });
 
-  /* ---------- Category rail (variant 3): vertical scroll slides it sideways ---------- */
+  /* ---------- Category rail: vertical scroll slides it sideways ---------- */
 
   const rails = [...document.querySelectorAll("[data-rail]")].map((el) => ({
     el,
